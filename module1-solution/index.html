@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+<head>
+	<meta charset="utf-8">
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<title></title>
+</head>
+<body>
+	<center><h2>Lunch Check</h2><hr><br>
+	<div ng-controller="LunchCheckController">	<br>
+		<h4>Enter items:   <input type="text" placeholder="eg: item1, item2,..." ng-model="item" ng-keyup="upper();"><br></h4><br>
+		<button ng-click="check()"style="border-color:{{col}};border-width: 5px; ">Check If Too Much</button> <br><br>
+		
+		<h3 style="color:{{col}}">{{val}}</h3>
+		
+		
+	</div></center>
+	
+
+</body>
+</html>
