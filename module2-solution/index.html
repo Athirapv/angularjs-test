@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListCheckOff'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ShoppingListCheckOff</title>
+    <style type="text/css">
+    	li {
+  display: table;
+
+}
+span {
+  display: table-cell;
+}
+.left {
+  text-align: left;
+  width: 120px;
+  color: #8a2900;
+  font-weight: bold;
+}
+.right {
+  text-align: right;
+  color: darkgreen;
+  font-weight: bold;
+}
+    </style>
+  </head>
+  <body>
+    <center><br><h1>Shopping List CheckOff</h1><br>
+    <div class="container" ng-controller='ToBuyController as itemAdder'>
+    	
+      <input type="text" ng-model="itemAdder.itemName" placeholder="item name">
+      <input type="text" ng-model="itemAdder.itemQuantity" placeholder="quantity">
+      <button ng-click="itemAdder.addItem();">Add Item To Shopping List</button><br><br><br><br>
+
+
+    
+      <div class="row">
+      <div style="background-color: lightyellow" class="col">
+      <br>	<h3 > To Buy</h3><br>
+      <div style="color: green; font-size: 28px;" ng-if="itemAdder.tobuy.length==0"> Everything is bought!</div>
+      <ol>
+  <li  ng-repeat="item in itemAdder.tobuy" >
+    <span class="left" >Buy {{ item.quantity }} {{ item.name }}</span> 
+    <span class="right"><button ng-click="itemAdder.removeItem($index);">Bought</button><span><br>
+  </li></ol>
+      	
+      
+      </div>
+ 
+
+    <div style="background-color: #c8f5bc"  class="col" ng-controller='AlreadyBoughtController as showList'>
+
+    <br> <h3 > Brought</h3><br>
+    <div style="color: blue; font-size: 28px;" ng-if="showList.brought.length==0"> Nothing bought yet</div>
+
+     <ol >
+      	<li class="right" ng-repeat="item in showList.brought">
+         Bought  {{ item.quantity }} {{ item.name }}
+
+          
+        </li>
+      </ol>
+     
+    </div></div>
+       </div></center>
+  </body>
+</html>
