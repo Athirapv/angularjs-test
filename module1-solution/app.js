@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 (function(){
 	'use strict';
 
@@ -41,7 +41,7 @@
 	
 })();
 
-=======
+
 (function(){
 	'use strict';
 
@@ -84,4 +84,3 @@
 	
 })();
 
->>>>>>> 2640b1c134c7157c57cffd050815407fbe0e522e
